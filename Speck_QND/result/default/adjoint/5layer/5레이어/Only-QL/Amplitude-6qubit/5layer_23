@@ -1,0 +1,119 @@
+pc@pc-desktop:~/바탕화면/SPECK$ python3 5layer_amp_6qubit.py 
+2023-03-09 16:37:12.903220: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-03-09 16:37:13.483157: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.2/lib64
+2023-03-09 16:37:13.483219: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.2/lib64
+2023-03-09 16:37:13.483227: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2023-03-09 16:37:14.893196: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 16:37:14.899261: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 16:37:14.900036: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 16:37:14.900739: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-03-09 16:37:14.901021: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 16:37:14.901555: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 16:37:14.902070: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 16:37:15.344233: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 16:37:15.344928: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 16:37:15.345430: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 16:37:15.345909: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22043 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:01:00.0, compute capability: 8.6
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 64)]              0         
+                                                                 
+ keras_layer_1 (KerasLayer)  (None, 6)                 30        
+                                                                 
+ dense_1 (Dense)             (None, 1)                 7         
+                                                                 
+=================================================================
+Total params: 37
+Trainable params: 37
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 1/10
+2023-03-09 16:37:17.939952: I tensorflow/compiler/xla/service/service.cc:173] XLA service 0x1cfa4780 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2023-03-09 16:37:17.939980: I tensorflow/compiler/xla/service/service.cc:181]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
+2023-03-09 16:37:17.943262: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2023-03-09 16:37:18.097850: I tensorflow/compiler/jit/xla_compilation_cache.cc:477] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+313/313 - 537s - loss: 0.6956 - acc: 0.5060 - val_loss: 0.6952 - val_acc: 0.4918 - 537s/epoch - 2s/step
+Epoch 2/10
+313/313 - 534s - loss: 0.6944 - acc: 0.5028 - val_loss: 0.6947 - val_acc: 0.4920 - 534s/epoch - 2s/step
+Epoch 3/10
+313/313 - 534s - loss: 0.6940 - acc: 0.5031 - val_loss: 0.6943 - val_acc: 0.4936 - 534s/epoch - 2s/step
+Epoch 4/10
+313/313 - 534s - loss: 0.6937 - acc: 0.5026 - val_loss: 0.6940 - val_acc: 0.4930 - 534s/epoch - 2s/step
+Epoch 5/10
+313/313 - 534s - loss: 0.6935 - acc: 0.5018 - val_loss: 0.6938 - val_acc: 0.4916 - 534s/epoch - 2s/step
+Epoch 6/10
+313/313 - 534s - loss: 0.6933 - acc: 0.5035 - val_loss: 0.6937 - val_acc: 0.4970 - 534s/epoch - 2s/step
+Epoch 7/10
+313/313 - 533s - loss: 0.6932 - acc: 0.5058 - val_loss: 0.6936 - val_acc: 0.4992 - 533s/epoch - 2s/step
+Epoch 8/10
+313/313 - 535s - loss: 0.6931 - acc: 0.5065 - val_loss: 0.6935 - val_acc: 0.4994 - 535s/epoch - 2s/step
+Epoch 9/10
+313/313 - 534s - loss: 0.6930 - acc: 0.5102 - val_loss: 0.6934 - val_acc: 0.4996 - 534s/epoch - 2s/step
+Epoch 10/10
+313/313 - 535s - loss: 0.6929 - acc: 0.5113 - val_loss: 0.6934 - val_acc: 0.4974 - 535s/epoch - 2s/step
+32/32 [==============================] - 20s 617ms/step
+0.497
+pc@pc-desktop:~/바탕화면/SPECK$ python3 5layer_amp_6qubit.py 
+2023-03-09 19:47:13.270523: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-03-09 19:47:13.904506: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.2/lib64
+2023-03-09 19:47:13.904561: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.2/lib64
+2023-03-09 19:47:13.904569: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2023-03-09 19:47:15.375014: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 19:47:15.381155: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 19:47:15.381736: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 19:47:15.382441: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-03-09 19:47:15.382738: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 19:47:15.383354: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 19:47:15.383868: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 19:47:15.804606: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 19:47:15.805184: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 19:47:15.805688: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-09 19:47:15.806172: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22093 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:01:00.0, compute capability: 8.6
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 64)]              0         
+                                                                 
+ keras_layer_1 (KerasLayer)  (None, 6)                 30        
+                                                                 
+ dense_1 (Dense)             (None, 1)                 7         
+                                                                 
+=================================================================
+Total params: 37
+Trainable params: 37
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 1/10
+2023-03-09 19:47:18.062933: I tensorflow/compiler/xla/service/service.cc:173] XLA service 0x1c638f70 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2023-03-09 19:47:18.062961: I tensorflow/compiler/xla/service/service.cc:181]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
+2023-03-09 19:47:18.066237: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2023-03-09 19:47:18.176583: I tensorflow/compiler/jit/xla_compilation_cache.cc:477] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+313/313 - 535s - loss: 0.6999 - acc: 0.4907 - val_loss: 0.6957 - val_acc: 0.5010 - 535s/epoch - 2s/step
+Epoch 2/10
+313/313 - 534s - loss: 0.6961 - acc: 0.4990 - val_loss: 0.6952 - val_acc: 0.5034 - 534s/epoch - 2s/step
+Epoch 3/10
+313/313 - 534s - loss: 0.6954 - acc: 0.5006 - val_loss: 0.6948 - val_acc: 0.5020 - 534s/epoch - 2s/step
+Epoch 4/10
+313/313 - 534s - loss: 0.6950 - acc: 0.5009 - val_loss: 0.6944 - val_acc: 0.5012 - 534s/epoch - 2s/step
+Epoch 5/10
+313/313 - 534s - loss: 0.6945 - acc: 0.4993 - val_loss: 0.6941 - val_acc: 0.4992 - 534s/epoch - 2s/step
+Epoch 6/10
+313/313 - 535s - loss: 0.6943 - acc: 0.5008 - val_loss: 0.6939 - val_acc: 0.5000 - 535s/epoch - 2s/step
+Epoch 7/10
+313/313 - 535s - loss: 0.6940 - acc: 0.5020 - val_loss: 0.6937 - val_acc: 0.4950 - 535s/epoch - 2s/step
+Epoch 8/10
+313/313 - 534s - loss: 0.6937 - acc: 0.5008 - val_loss: 0.6936 - val_acc: 0.4982 - 534s/epoch - 2s/step
+Epoch 9/10
+313/313 - 535s - loss: 0.6935 - acc: 0.5045 - val_loss: 0.6935 - val_acc: 0.4962 - 535s/epoch - 2s/step
+Epoch 10/10
+313/313 - 534s - loss: 0.6934 - acc: 0.5055 - val_loss: 0.6933 - val_acc: 0.4988 - 534s/epoch - 2s/step
+32/32 [==============================] - 20s 611ms/step
+0.492
+

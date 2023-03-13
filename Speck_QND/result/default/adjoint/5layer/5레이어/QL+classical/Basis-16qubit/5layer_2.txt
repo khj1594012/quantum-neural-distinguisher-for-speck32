@@ -1,0 +1,101 @@
+hj@DESKTOP-FLFN9KT:~/SPECK$ python3 5layers_16qubit.py
+2023-03-06 02:34:23.772997: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-03-06 02:34:23.836424: I tensorflow/core/util/port.cc:104] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-03-06 02:34:24.169886: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/cuda-11.2/lib64
+2023-03-06 02:34:24.169942: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/cuda-11.2/lib64
+2023-03-06 02:34:24.169947: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2023-03-06 02:34:25.151071: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-03-06 02:34:25.156091: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-03-06 02:34:25.156291: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-03-06 02:34:25.156565: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-03-06 02:34:25.158300: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-03-06 02:34:25.158498: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-03-06 02:34:25.158687: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-03-06 02:34:25.577400: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-03-06 02:34:25.577689: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-03-06 02:34:25.577711: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
+2023-03-06 02:34:25.577872: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2023-03-06 02:34:25.577916: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 13344 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 4080, pci bus id: 0000:01:00.0, compute capability: 8.9
+Model: "model"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to
+==================================================================================================
+ input_1 (InputLayer)           [(None, 64)]         0           []
+
+ tf.split (TFOpLambda)          [(None, 16),         0           ['input_1[0][0]']
+                                 (None, 16),
+                                 (None, 16),
+                                 (None, 16)]
+
+ keras_layer_1 (KerasLayer)     (None, 16)           80          ['tf.split[0][0]']
+
+ keras_layer_2 (KerasLayer)     (None, 16)           80          ['tf.split[0][1]']
+
+ keras_layer_3 (KerasLayer)     (None, 16)           80          ['tf.split[0][2]']
+
+ keras_layer_4 (KerasLayer)     (None, 16)           80          ['tf.split[0][3]']
+
+ tf.concat (TFOpLambda)         (None, 64)           0           ['keras_layer_1[0][0]',
+                                                                  'keras_layer_2[0][0]',
+                                                                  'keras_layer_3[0][0]',
+                                                                  'keras_layer_4[0][0]']
+
+ dense (Dense)                  (None, 64)           4160        ['tf.concat[0][0]']
+
+ batch_normalization (BatchNorm  (None, 64)          256         ['dense[0][0]']
+ alization)
+
+ activation (Activation)        (None, 64)           0           ['batch_normalization[0][0]']
+
+ dense_1 (Dense)                (None, 1)            65          ['activation[0][0]']
+
+==================================================================================================
+Total params: 4,801
+Trainable params: 4,673
+Non-trainable params: 128
+__________________________________________________________________________________________________
+Epoch 1/10
+2023-03-06 02:34:43.646262: I tensorflow/compiler/xla/service/service.cc:173] XLA service 0x614ca40 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2023-03-06 02:34:43.646301: I tensorflow/compiler/xla/service/service.cc:181]   StreamExecutor device (0): NVIDIA GeForce RTX 4080, Compute Capability 8.9
+2023-03-06 02:34:43.649564: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2023-03-06 02:34:43.694230: W tensorflow/compiler/xla/stream_executor/gpu/asm_compiler.cc:234] Falling back to the CUDA driver for PTX compilation; ptxas does not support CC 8.9
+2023-03-06 02:34:43.694269: W tensorflow/compiler/xla/stream_executor/gpu/asm_compiler.cc:237] Used ptxas at ptxas
+2023-03-06 02:34:43.694317: W tensorflow/compiler/xla/service/gpu/nvptx_compiler.cc:281] Couldn't read CUDA driver version.
+2023-03-06 02:34:43.694797: I tensorflow/compiler/jit/xla_compilation_cache.cc:477] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+WARNING:tensorflow:5 out of the last 5 calls to <function _BaseOptimizer._update_step_xla at 0x7f1968181a60> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:5 out of the last 5 calls to <function _BaseOptimizer._update_step_xla at 0x7f1968181a60> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:6 out of the last 6 calls to <function _BaseOptimizer._update_step_xla at 0x7f1968181a60> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:6 out of the last 6 calls to <function _BaseOptimizer._update_step_xla at 0x7f1968181a60> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+313/313 - 4860s - loss: 0.7118 - acc: 0.5159 - val_loss: 0.6858 - val_acc: 0.5522 - 4860s/epoch - 16s/step
+Epoch 2/10
+313/313 - 4852s - loss: 0.6611 - acc: 0.6018 - val_loss: 0.6429 - val_acc: 0.6452 - 4852s/epoch - 16s/step
+Epoch 3/10
+313/313 - 4840s - loss: 0.6116 - acc: 0.6786 - val_loss: 0.5913 - val_acc: 0.6956 - 4840s/epoch - 15s/step
+Epoch 4/10
+313/313 - 4838s - loss: 0.5784 - acc: 0.7163 - val_loss: 0.5753 - val_acc: 0.7016 - 4838s/epoch - 15s/step
+Epoch 5/10
+313/313 - 4826s - loss: 0.5695 - acc: 0.7118 - val_loss: 0.5695 - val_acc: 0.7132 - 4826s/epoch - 15s/step
+Epoch 6/10
+313/313 - 4862s - loss: 0.5586 - acc: 0.7244 - val_loss: 0.5684 - val_acc: 0.7108 - 4862s/epoch - 16s/step
+Epoch 7/10
+313/313 - 4797s - loss: 0.5570 - acc: 0.7244 - val_loss: 0.5708 - val_acc: 0.7132 - 4797s/epoch - 15s/step
+Epoch 8/10
+313/313 - 4673s - loss: 0.5479 - acc: 0.7321 - val_loss: 0.5710 - val_acc: 0.7090 - 4673s/epoch - 15s/step
+Epoch 9/10
+313/313 - 4662s - loss: 0.5427 - acc: 0.7325 - val_loss: 0.5741 - val_acc: 0.7064 - 4662s/epoch - 15s/step
+Epoch 10/10
+
+313/313 - 4682s - loss: 0.5366 - acc: 0.7373 - val_loss: 0.5752 - val_acc: 0.7068 - 4682s/epoch - 15s/step
+32/32 [==============================] - 125s 4s/step
+0.724

@@ -1,0 +1,52 @@
+hj@DESKTOP-6RMLMKU:~/SPECK$ python3 amp_6qu_20layer_nodense.py
+2023-03-02 02:02:10.337345: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2023-03-02 02:02:10.338816: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-03-02 02:02:12.970816: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2023-03-02 02:02:12.972332: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2023-03-02 02:02:12.980013: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (DESKTOP-6RMLMKU): /proc/driver/nvidia/version does not exist
+2023-03-02 02:02:12.981936: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ input_1 (InputLayer)        [(None, 64)]              0
+
+ keras_layer_1 (KerasLayer)  (None, 6)                 120
+
+ dense_1 (Dense)             (None, 64)                448
+
+ batch_normalization (BatchN  (None, 64)               256
+ ormalization)
+
+ activation (Activation)     (None, 64)                0
+
+ dense_2 (Dense)             (None, 1)                 65
+
+=================================================================
+Total params: 889
+Trainable params: 761
+Non-trainable params: 128
+_________________________________________________________________
+Epoch 1/10
+313/313 - 4034s - loss: 0.7009 - acc: 0.5017 - val_loss: 0.6945 - val_acc: 0.5022 - 4034s/epoch - 13s/step
+Epoch 2/10
+313/313 - 4035s - loss: 0.6950 - acc: 0.5081 - val_loss: 0.6975 - val_acc: 0.5030 - 4035s/epoch - 13s/step
+Epoch 3/10
+313/313 - 4033s - loss: 0.6930 - acc: 0.5172 - val_loss: 0.6954 - val_acc: 0.5016 - 4033s/epoch - 13s/step
+Epoch 4/10
+313/313 - 4037s - loss: 0.6919 - acc: 0.5224 - val_loss: 0.6994 - val_acc: 0.5006 - 4037s/epoch - 13s/step
+Epoch 5/10
+313/313 - 4036s - loss: 0.6899 - acc: 0.5313 - val_loss: 0.7056 - val_acc: 0.5080 - 4036s/epoch - 13s/step
+Epoch 6/10
+313/313 - 4032s - loss: 0.6905 - acc: 0.5289 - val_loss: 0.6978 - val_acc: 0.4968 - 4032s/epoch - 13s/step
+Epoch 7/10
+313/313 - 4039s - loss: 0.6890 - acc: 0.5337 - val_loss: 0.6978 - val_acc: 0.5004 - 4039s/epoch - 13s/step
+Epoch 8/10
+313/313 - 4039s - loss: 0.6892 - acc: 0.5318 - val_loss: 0.6970 - val_acc: 0.5034 - 4039s/epoch - 13s/step
+Epoch 9/10
+313/313 - 4060s - loss: 0.6878 - acc: 0.5413 - val_loss: 0.6984 - val_acc: 0.5086 - 4060s/epoch - 13s/step
+Epoch 10/10
+313/313 - 4096s - loss: 0.6887 - acc: 0.5329 - val_loss: 0.6980 - val_acc: 0.5088 - 4096s/epoch - 13s/step
+32/32 [==============================] - 149s 5s/step
+0.499

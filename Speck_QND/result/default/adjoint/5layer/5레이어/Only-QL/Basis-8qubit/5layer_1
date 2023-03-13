@@ -1,0 +1,97 @@
+pc@pc-desktop:~/바탕화면/SPECK$ python3 5layers_8qubit_nodense.py 
+2023-03-07 15:41:05.934948: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-03-07 15:41:06.516570: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.2/lib64
+2023-03-07 15:41:06.516627: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.2/lib64
+2023-03-07 15:41:06.516636: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2023-03-07 15:41:07.875115: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-07 15:41:07.882243: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-07 15:41:07.882812: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-07 15:41:07.883505: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-03-07 15:41:07.883783: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-07 15:41:07.884312: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-07 15:41:07.884824: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-07 15:41:08.301632: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-07 15:41:08.302211: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-07 15:41:08.302714: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-03-07 15:41:08.303197: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22040 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:01:00.0, compute capability: 8.6
+Model: "model"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_1 (InputLayer)           [(None, 64)]         0           []                               
+                                                                                                  
+ tf.split (TFOpLambda)          [(None, 8),          0           ['input_1[0][0]']                
+                                 (None, 8),                                                       
+                                 (None, 8),                                                       
+                                 (None, 8),                                                       
+                                 (None, 8),                                                       
+                                 (None, 8),                                                       
+                                 (None, 8),                                                       
+                                 (None, 8)]                                                       
+                                                                                                  
+ keras_layer_1 (KerasLayer)     (None, 8)            40          ['tf.split[0][0]']               
+                                                                                                  
+ keras_layer_2 (KerasLayer)     (None, 8)            40          ['tf.split[0][1]']               
+                                                                                                  
+ keras_layer_3 (KerasLayer)     (None, 8)            40          ['tf.split[0][2]']               
+                                                                                                  
+ keras_layer_4 (KerasLayer)     (None, 8)            40          ['tf.split[0][3]']               
+                                                                                                  
+ keras_layer_5 (KerasLayer)     (None, 8)            40          ['tf.split[0][4]']               
+                                                                                                  
+ keras_layer_6 (KerasLayer)     (None, 8)            40          ['tf.split[0][5]']               
+                                                                                                  
+ keras_layer_7 (KerasLayer)     (None, 8)            40          ['tf.split[0][6]']               
+                                                                                                  
+ keras_layer_8 (KerasLayer)     (None, 8)            40          ['tf.split[0][7]']               
+                                                                                                  
+ tf.concat (TFOpLambda)         (None, 64)           0           ['keras_layer_1[0][0]',          
+                                                                  'keras_layer_2[0][0]',          
+                                                                  'keras_layer_3[0][0]',          
+                                                                  'keras_layer_4[0][0]',          
+                                                                  'keras_layer_5[0][0]',          
+                                                                  'keras_layer_6[0][0]',          
+                                                                  'keras_layer_7[0][0]',          
+                                                                  'keras_layer_8[0][0]']          
+                                                                                                  
+ dense_2 (Dense)                (None, 1)            65          ['tf.concat[0][0]']              
+                                                                                                  
+==================================================================================================
+Total params: 385
+Trainable params: 385
+Non-trainable params: 0
+__________________________________________________________________________________________________
+Epoch 1/10
+2023-03-07 15:41:23.684278: I tensorflow/compiler/xla/service/service.cc:173] XLA service 0x1d6468a0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2023-03-07 15:41:23.684305: I tensorflow/compiler/xla/service/service.cc:181]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
+2023-03-07 15:41:23.687778: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2023-03-07 15:41:23.808351: I tensorflow/compiler/jit/xla_compilation_cache.cc:477] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+WARNING:tensorflow:5 out of the last 5 calls to <function _BaseOptimizer._update_step_xla at 0x7f491440aa60> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:5 out of the last 5 calls to <function _BaseOptimizer._update_step_xla at 0x7f491440aa60> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:6 out of the last 6 calls to <function _BaseOptimizer._update_step_xla at 0x7f491440aa60> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:6 out of the last 6 calls to <function _BaseOptimizer._update_step_xla at 0x7f491440aa60> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+313/313 - 5368s - loss: 0.7180 - acc: 0.4991 - val_loss: 0.7087 - val_acc: 0.4992 - 5368s/epoch - 17s/step
+Epoch 2/10
+313/313 - 5363s - loss: 0.7011 - acc: 0.5026 - val_loss: 0.7009 - val_acc: 0.5022 - 5363s/epoch - 17s/step
+Epoch 3/10
+313/313 - 5356s - loss: 0.6961 - acc: 0.5042 - val_loss: 0.6982 - val_acc: 0.5024 - 5356s/epoch - 17s/step
+Epoch 4/10
+
+313/313 - 5362s - loss: 0.6940 - acc: 0.5066 - val_loss: 0.6970 - val_acc: 0.5002 - 5362s/epoch - 17s/step
+Epoch 5/10
+313/313 - 5361s - loss: 0.6930 - acc: 0.5109 - val_loss: 0.6965 - val_acc: 0.5022 - 5361s/epoch - 17s/step
+Epoch 6/10
+313/313 - 5361s - loss: 0.6924 - acc: 0.5183 - val_loss: 0.6962 - val_acc: 0.5008 - 5361s/epoch - 17s/step
+Epoch 7/10
+313/313 - 5360s - loss: 0.6921 - acc: 0.5185 - val_loss: 0.6961 - val_acc: 0.5010 - 5360s/epoch - 17s/step
+Epoch 8/10
+313/313 - 5358s - loss: 0.6917 - acc: 0.5203 - val_loss: 0.6960 - val_acc: 0.5010 - 5358s/epoch - 17s/step
+Epoch 9/10
+313/313 - 5356s - loss: 0.6915 - acc: 0.5223 - val_loss: 0.6960 - val_acc: 0.5008 - 5356s/epoch - 17s/step
+Epoch 10/10
+313/313 - 5364s - loss: 0.6914 - acc: 0.5226 - val_loss: 0.6960 - val_acc: 0.5008 - 5364s/epoch - 17s/step
+32/32 [==============================] - 192s 6s/step
+0.488
+
